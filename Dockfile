@@ -1,0 +1,11 @@
+# Nginx ベースのイメージを使用
+FROM nginx:alpine
+
+# HTML ファイルを Nginx の公開ディレクトリにコピー
+COPY . /usr/share/nginx/html
+
+# ポート 80 を公開
+EXPOSE 80
+
+# Nginx を起動
+CMD ["nginx", "-g", "daemon off;"]
