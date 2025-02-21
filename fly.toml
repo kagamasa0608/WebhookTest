@@ -1,0 +1,13 @@
+app = "cold-snowflake-1332"  # Fly.io で作成したアプリ名
+
+[build]
+  builder = "heroku/buildpacks:20"  # Nginx ビルダー
+
+[[services]]
+  internal_port = 80  # コンテナのポート
+  protocol = "tcp"
+  script_checks = []
+
+  [[services.ports]]
+    port = 80  # Fly.io がリッスンするポート
+    handlers = ["http"]
